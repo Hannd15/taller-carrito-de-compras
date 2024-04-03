@@ -28,18 +28,24 @@
         </button>
     </div>
     <h1 class="text-center m-5">Productos</h1>
-    <div class="container text-center">
+    <div class="container text-center mx-auto">
         <div class="row gap-3">
         @foreach ($products as $product)
             <div class="card col-md-3" style="width: 18rem; col-md-3">
-                <img src="{{ $product->url_image }}" class="card-img-top" alt="{{ $product->name }}">
-                <div class="card-body">
-                  <h5 class="card-title">{{ $product->name }}</h5>
-                  <p class="card-text">{{ $product->price }}</p>
-                  <a href="#" class="btn btn-primary" style="background-color: #f4860b;">Añadir al carrito</a>
-                </div>
+                <form action="{{ route('insert.store') }}" method="post">
+                    @csrf
+                    <img src="{{ $product->url_image }}" class="card-img-top" alt="{{ $product->name }}">
+                    <div class="card-body">
+                       <input type="hidden" name="product_id" value="{{ $product->id }}">
+                      <h5 class="card-title">{{ $product->name }}</h5>
+                      <p class="card-text">{{ $product->price }}</p>
+                      <button type="submit" class="btn btn-primary" style="background-color: #f4860b;">Añadir al carrito</button>
+                    </div>
+                </form>
               </div> 
-              @endforeach
+
+              
+        @endforeach
         </div>
     </div>
 @endsection

@@ -3,11 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Cart;
 
 class CartController extends Controller
 {
-    function index(){
-        $products = Product::where('state', 1)->get();
-        return view('welcome', ['products' => $products]);
+    public function store(Request $request)
+    {
+        Cart::create([
+            'product_id' => $request->input('product_id')
+        ]);
+        Cart::delete([
+            
+        ]);
+
+        return redirect()->back()->with('success', 'Data inserted successfully.');
     }
+
 }
