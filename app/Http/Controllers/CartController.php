@@ -9,14 +9,15 @@ class CartController extends Controller
 {
     public function store(Request $request)
     {
-        Cart::create([
-            'product_id' => $request->input('product_id')
-        ]);
-        Cart::delete([
-            
-        ]);
+    Cart::create($request->input('product_id'));
 
         return redirect()->back()->with('success', 'Data inserted successfully.');
     }
+    public function delete(Request $request)
+    {
+
+        return redirect()->back()->with('success', 'Data inserted successfully.');
+    }
+
 
 }
