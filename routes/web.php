@@ -20,8 +20,6 @@ Route::get('/', [ProductController::class, 'index'])->name('root');
 
 Route::post('/insert', [CartController::class, 'store'])->name('insert.store');
 
-Route::post('/delete', [CartController::class, 'delete'])->name('delete.store');
+Route::post('/remove', [CartController::class, 'delete'])->name('delete.store');
 
-Route::get('/products/detail', function () {
-    return view('detail');
-})->name('product.cart');
+Route::get('/products/detail', [CartController::class, 'index'])->name('product.cart');

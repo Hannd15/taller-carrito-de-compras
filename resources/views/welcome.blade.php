@@ -7,6 +7,7 @@
     @foreach ($products as $product)
     <div class="card col-md-3 mx-auto d-inline-block" style="width: 18rem;">
         <form action="{{ route('insert.store') }}" method="post">
+    @csrf
             <img src="{{ $product->url_image }}" class="card-img-top" alt="{{ $product->name }}">
             <div class="card-body">
                 <input type="hidden" name="product_id" value="{{ $product->id }}">
