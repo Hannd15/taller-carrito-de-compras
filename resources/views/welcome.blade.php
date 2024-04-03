@@ -29,29 +29,17 @@
     </div>
     <h1 class="text-center m-5">Productos</h1>
     <div class="container text-center">
-        <div class="row">
+        <div class="row gap-3">
+        @foreach ($products as $product)
             <div class="card col-md-3" style="width: 18rem; col-md-3">
-                <img src="{{asset('imgs/bomDia.jpg')}}" class="card-img-top" alt="...">
+                <img src="{{ $product->url_image }}" class="card-img-top" alt="{{ $product->name }}">
                 <div class="card-body">
-                  <h5 class="card-title">Nice cat :3</h5>
-                  <p class="card-text">$Un morbillon de pesos</p>
-                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
+                  <h5 class="card-title">{{ $product->name }}</h5>
+                  <p class="card-text">{{ $product->price }}</p>
+                  <a href="#" class="btn btn-primary" style="background-color: #f4860b;">Añadir al carrito</a>
                 </div>
-              </div>
-              <div class="card col-md-3" style="width: 18rem; col-md-3">
-                <img src="{{asset('imgs/bomDia.jpg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Nice cat :3</h5>
-                  <p class="card-text">$Un morbillon de pesos</p>
-                  <a href="#" class="btn btn-primary">Añadir al carrito</a>
-                </div>
-              </div>
-            <div class="col-md-3">
-                <p>momazos</p>
-            </div>
-            <div class="col-md-3">
-                <p>momazos</p>
-            </div>
+              </div> 
+              @endforeach
         </div>
     </div>
 @endsection
