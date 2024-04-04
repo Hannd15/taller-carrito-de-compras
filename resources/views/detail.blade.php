@@ -11,7 +11,7 @@
         <div class="row justify-content-center align-items-center mb-4">
             <div class="border rounded p-3 d-flex justify-content-between align-items-center w-75">
                 <div class="col-md-4 text-center">
-                    <img src="{{ $cartItem->url_image }}" alt="{{ $cartItem->name }}" style="max-width: 150px;">
+                    <img src="{{ $cartItem->url_image }}" alt="{{ $cartItem->name }}" style="max-height: 250px;">
                 </div>
                 <div class="col-md-6 text-left w-25">
                     <input type="hidden" name="cart_id" value="{{ $cartItem->id }}">
@@ -26,6 +26,8 @@
         </div>
     </form>
     @endforeach
-    <h1 class="text-center m-5">Valor total: ${{ $totalPrice }}</h1>
+</div>
+<div style="background-color: #f4860b;width: 100%;padding: 1rem;">
+    <h1 class="text-center m-5" style="color: white;">Valor total: ${{ $totalPrice }}</h1>
 </div>
 @endsection

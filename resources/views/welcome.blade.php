@@ -4,7 +4,7 @@
 <h1 class="text-center m-5">Productos</h1>
 <div class="row gap-3 text-center justify-content-center" style="padding-left: 30px;padding-right: 30px;">
     @foreach ($products as $product)
-    <div class="card col-md-3 mx-auto d-inline-block" style="width: 18rem;">
+    <div class="card col-md-3 mx-auto d-inline-block p-3" style="width: 18rem;">
         <form action="{{ route('insert.store') }}" method="post">
             @csrf
             <img src="{{ $product->url_image }}" class="card-img-top" alt="{{ $product->name }}">
