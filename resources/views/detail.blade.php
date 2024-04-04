@@ -26,6 +26,6 @@
         </div>
     </form>
     @endforeach
-    <h1 class="text-center m-5">Valor total: {{ $totalPrice }}</h1>
+    <h1 class="text-center m-5">Valor total: ${{ $totalPrice }}</h1>
 </div>
 @endsection
