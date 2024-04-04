@@ -8,11 +8,11 @@
     @csrf
     <div class="row">
         <div class="col-md-8">
-            <img src="{{asset('imgs/bomDia.jpg')}}" alt="Rude Cat">
+            <img src="{{$cartItem->url_image}}" alt="{{$cartItem->name}}">
         </div>
         <div class="col-md-4 text-left">
-            <p></p>
-            <h3>$</h3>
+            <p>{{$cartItem->name}}</p>
+            <h3>${{$cartItem->price}}</h3>
             <button type="submit" class="btn btn-primary" style="background-color: #f4860b;border-color: #f4860b">Añadir al carrito</button>
         </div>
     </div>

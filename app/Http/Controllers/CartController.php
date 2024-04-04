@@ -21,9 +21,9 @@ Cart::create([
         return redirect()->back()->with('success', 'Data removed successfully.');
     }
     public function index(){
-
         $cartItems = DB::table('carts')
-            ->where('carts.product_id', '=', 'products.id')
+            ->join('products', 'carts.product_id', '=', 'products.id')
+            ->select('carts.*', 'products.*')
             ->get();
         return view('detail', ['cartItems' => $cartItems]);
     }
